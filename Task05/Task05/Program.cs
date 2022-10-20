@@ -11,11 +11,11 @@ namespace Task05
     {
         static void Main(string[] args)
         {
-            double x = sinuss(2,3) + sinuss(5,7) + sinuss(11,13);
+            double x = Sinuss(2,3) + Sinuss(5,7) + Sinuss(11,13);
             Console.WriteLine("x = " + x);
             Console.ReadKey();
         }
-        static double sinuss(double x,double y)
+        static double Sinuss(double x,double y)
         {
             return Math.Round(((Math.Sin(x)+Math.Sin(y))/(x+y)),3);
         }
