@@ -17,7 +17,7 @@ namespace Task_07_1
 
         static int EnterNumber()
         {
-            Console.WriteLine(@"Введите число:");
+            Console.WriteLine("Введите число:");
             int x = int.Parse(Console.ReadLine());
             return x;
         }
