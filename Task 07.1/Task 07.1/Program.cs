@@ -24,16 +24,14 @@ namespace Task_07_1
 
         static bool CalculateBool()
         {
-            bool negative;
             if ((EnterNumber() <= 0) & (EnterNumber() <= 0) & (EnterNumber() <= 0))
             {
-                negative = true;
+                return true;
             }
             else
             {
-                negative = false;
+                return false;
             }
-            return negative;
         }
     }
 }
