@@ -1,32 +1,36 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace Task07_2
 {
     internal class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
-            
+            Console.WriteLine("Принадлежит ли данная точка указанной области?\n"+BelongsToArea());
 
             Console.ReadKey();
         }
 
         static bool BelongsToArea()
         {
-            Console.WriteLine("Введите x:");
-            double x = double.Parse(Console.ReadLine());
-
-            Console.WriteLine("Введите y:");
-            double y = double.Parse(Console.ReadLine());
-            if ((y >= -2)&(y<=1,5))
+            double x = EnterNumber("x");
+            double y = EnterNumber("y");
+            if ((y <= 1.5) & (y >= -2))
             {
                 return true;
             }
+            else 
+            {
+                return false;
+            }
+        }
 
+        static double EnterNumber(string name)
+        {
+            Console.WriteLine($"Введите число {name}:");
+            double x = double.Parse(Console.ReadLine());
+            return x;
         }
     }
 }
