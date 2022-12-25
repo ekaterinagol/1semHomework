@@ -10,6 +10,6 @@ namespace Task09_2
     {
         static void Main(string[] args)
         {
-        }
+        // не обращайте внимание, тут ничего нет        }
     }
 }
