@@ -1,30 +1,27 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace Task_07_1
 {
     internal class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             Console.WriteLine(CalculateBool());
 
             Console.ReadKey();
         }
 
-        static int EnterNumber()
+        static int EnterNumber(string name)
         {
-            Console.WriteLine("Введите число:");
+            Console.WriteLine($"Введите число {name}:");
             int x = int.Parse(Console.ReadLine());
             return x;
         }
 
         static bool CalculateBool()
         {
-            if ((EnterNumber() <= 0) & (EnterNumber() <= 0) & (EnterNumber() <= 0))
+            if ((EnterNumber("k") <= 0) & (EnterNumber("m") <= 0) & (EnterNumber("n") <= 0))
             {
                 return true;
             }
