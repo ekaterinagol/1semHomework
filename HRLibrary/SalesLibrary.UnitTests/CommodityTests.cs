@@ -12,8 +12,8 @@ namespace SalesLibrary.UnitTests
         [SetUp]
         public void Setup()
         {
-            commodity = new Commodity("01bcca", "Хлеб «Новоречко»", 70, 74, UnitOfMeasure.Package);
-            commodity.Description = "хлеб белый бездрожжевой. 350 гр";
+            commodity = new Commodity("01bcca", "Г•Г«ГҐГЎ В«ГЌГ®ГўГ®Г°ГҐГ·ГЄГ®В»", 70, 74, UnitOfMeasure.Package);
+            commodity.Description = "ГµГ«ГҐГЎ ГЎГҐГ«Г»Г© ГЎГҐГ§Г¤Г°Г®Г¦Г¦ГҐГўГ®Г©. 350 ГЈГ°";
             commodity.Amount = 120;
         }
 
@@ -21,7 +21,7 @@ namespace SalesLibrary.UnitTests
         public void ConstructorTest()
         {
             Assert.That(commodity.VendorCode, Is.EqualTo("01bcca"));
-            Assert.That(commodity.Name, Is.EqualTo("Хлеб «Новоречко»"));
+            Assert.That(commodity.Name, Is.EqualTo("РҐР»РµР± В«РќРѕРІРѕСЂРµС‡РєРѕВ»"));
             Assert.That(commodity.WholesalePricePerItem, Is.EqualTo(70));
             Assert.That(commodity.RetailPricePerItem, Is.EqualTo(74));
             Assert.That(commodity.CommodityType, Is.EqualTo(UnitOfMeasure.Package));
@@ -30,9 +30,9 @@ namespace SalesLibrary.UnitTests
         [Test]
         public void GetInfo_Commodity_ValuesString()
         {
-            string expectedInfo = "01bcca. Хлеб «Новоречко» - хлеб белый бездрожжевой. 350 гр."; 
-            expectedInfo += "Оптовая цена = 70 р/у. Розничная цена = 74 p/у."; 
-            expectedInfo += "120 у на складе."; 
+            string expectedInfo = "01bcca. РҐР»РµР± В«РќРѕРІРѕСЂРµС‡РєРѕВ» - С…Р»РµР± Р±РµР»С‹Р№ Р±РµР·РґСЂРѕР¶Р¶РµРІРѕР№. 350 РіСЂ."; 
+            expectedInfo += "РћРїС‚РѕРІР°СЏ С†РµРЅР° = 70 СЂ/Сѓ. Р РѕР·РЅРёС‡РЅР°СЏ С†РµРЅР° = 74 p/Сѓ."; 
+            expectedInfo += "120 Сѓ РЅР° СЃРєР»Р°РґРµ."; 
 
             Assert.That(commodity.GetInfo(), Is.EqualTo(expectedInfo));
         }
