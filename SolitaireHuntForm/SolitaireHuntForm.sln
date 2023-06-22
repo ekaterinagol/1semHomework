@@ -1,0 +1,77 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33801.468
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolitaireHuntForm", "SolitaireHuntForm\SolitaireHuntForm.csproj", "{D216A257-2F81-4292-996E-5A0C6489B21B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CardsLibrary", "CardsLibrary\CardsLibrary.csproj", "{B76BA020-172C-4165-92B0-0D022D2FBDC0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Элементы решения", "Элементы решения", "{F040AEFF-B6C2-4B77-98AC-4F74558C4465}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\..\Downloads\Hunt.exe = ..\..\..\..\Downloads\Hunt.exe
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CardImages", "CardImages", "{B2DB6233-C261-4533-956E-3A0B3BFA4C6D}"
+	ProjectSection(SolutionItems) = preProject
+		CardImages\Back.png = CardImages\Back.png
+		CardImages\C6.png = CardImages\C6.png
+		CardImages\C10.png = CardImages\C10.png
+		CardImages\C7.png = CardImages\C7.png
+		CardImages\C8.png = CardImages\C8.png
+		CardImages\C9.png = CardImages\C9.png
+		CardImages\CA.png = CardImages\CA.png
+		CardImages\CJ.png = CardImages\CJ.png
+		CardImages\CK.png = CardImages\CK.png
+		CardImages\CQ.png = CardImages\CQ.png
+		CardImages\D6.png = CardImages\D6.png
+		CardImages\D10.png = CardImages\D10.png
+		CardImages\D7.png = CardImages\D7.png
+		CardImages\D8.png = CardImages\D8.png
+		CardImages\D9.png = CardImages\D9.png
+		CardImages\DA.png = CardImages\DA.png
+		CardImages\DJ.png = CardImages\DJ.png
+		CardImages\DK.png = CardImages\DK.png
+		CardImages\DQ.png = CardImages\DQ.png
+		CardImages\H6.png = CardImages\H6.png
+		CardImages\H10.png = CardImages\H10.png
+		CardImages\H7.png = CardImages\H7.png
+		CardImages\H8.png = CardImages\H8.png
+		CardImages\H9.png = CardImages\H9.png
+		CardImages\HA.png = CardImages\HA.png
+		CardImages\HJ.png = CardImages\HJ.png
+		CardImages\HK.png = CardImages\HK.png
+		CardImages\HQ.png = CardImages\HQ.png
+		CardImages\S6.png = CardImages\S6.png
+		CardImages\S10.png = CardImages\S10.png
+		CardImages\S7.png = CardImages\S7.png
+		CardImages\S8.png = CardImages\S8.png
+		CardImages\S9.png = CardImages\S9.png
+		CardImages\SA.png = CardImages\SA.png
+		CardImages\SJ.png = CardImages\SJ.png
+		CardImages\SK.png = CardImages\SK.png
+		CardImages\SQ.png = CardImages\SQ.png
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D216A257-2F81-4292-996E-5A0C6489B21B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D216A257-2F81-4292-996E-5A0C6489B21B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D216A257-2F81-4292-996E-5A0C6489B21B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D216A257-2F81-4292-996E-5A0C6489B21B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B76BA020-172C-4165-92B0-0D022D2FBDC0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B76BA020-172C-4165-92B0-0D022D2FBDC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B76BA020-172C-4165-92B0-0D022D2FBDC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B76BA020-172C-4165-92B0-0D022D2FBDC0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {905F0E16-17D3-4517-8C34-3F6510D36527}
+	EndGlobalSection
+EndGlobal
