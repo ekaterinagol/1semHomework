@@ -17,31 +17,29 @@ namespace SolitaireHuntForm
         {
             InitializeComponent();
             GameStart();
-
         }
 
-        public Card PreviousCard = null;
+        public Card PreviousCard = new Card(SuitType.S, 5);
         public Card crd = new Card(SuitType.S, 6);
         public Stack<Card>[] stack = new Stack<Card>[9];
 
 
         void GameStart()
         {
-            var crd = new Card(SuitType.S, 6);
-
-            Stack<Card>[] stack = new Stack<Card>[9];
+            var card = crd.GenerateCard();
             for (int j = 0; j < 9; j++)
             {
                 stack[j] = new Stack<Card>();
                 for (int i = 0; i < 4; i++)
                 {
-                    Card card = crd.GenerateCard();
                     for (int k = 0; k < j + 1; k++)
                     {
+                        card = crd.GenerateCard();
                         if (stack[k].Contains(card))
                             i--;
                         else
                             stack[j].Push(card);
+
                     }
                 }
             }
@@ -67,7 +65,8 @@ namespace SolitaireHuntForm
 
             //crd = GenerateStack().Peek();
             //position11.Image = Image.FromFile(System.IO.Path.GetFullPath($@"CardImages\{crd.Suit}{crd.Value}.png"));
-            crd = stack[0].Peek();
+            crd = stack[0].Pop();
+            stack[0].Pop();
             position11.Image = Image.FromFile(System.IO.Path.GetFullPath($@"CardImages\{crd.Suit}{crd.Value}.png"));
             crd = stack[1].Peek();
             position12.Image = Image.FromFile(System.IO.Path.GetFullPath($@"CardImages\{crd.Suit}{crd.Value}.png"));
@@ -91,42 +90,80 @@ namespace SolitaireHuntForm
 
         void Position11_MouseClick(object sender, MouseEventArgs e)
         {
-            var crd = new Card(SuitType.S, 6);
-            if (crd.IsCardTheSameValue(stack[0].Peek(), PreviousCard)){
-                stack[0].Pop();
-                for (int i = 0; i < 9; i++)
+            if (stack[0].Count > 0)
+            {
+                if (crd.IsCardTheSameValue(stack[0].Peek(), PreviousCard))
                 {
-                    if (crd.IsCardTheSameValue(PreviousCard, stack[i].Peek()))
+                    stack[0].Pop();
+                    for (int i = 0; i < 9; i++)
                     {
-                        stack[i].Pop();
-                        PreviousCard = null;
+                        if (stack[0].Count > 0)
+                        {
+                            if (crd.IsCardTheSameValue(PreviousCard, stack[i].Peek()))
+                            {
+                                stack[i].Pop();
+                            }
+                        }
+                        else { position11.Image = null; }
                     }
+                    PreviousCard.Suit = SuitType.S;
+                    PreviousCard.Value = 5;
+                    if (stack[0].Count > 0)
+                    {
+                        position11.Image = Image.FromFile(System.IO.Path.GetFullPath($@"CardImages\{stack[0].Peek().Suit}{stack[0].Peek().Value}.png"));
+                    }
+                    else
+                        position11.Image = null;
+
+
                 }
+
+                else
+                    PreviousCard = stack[0].Peek();
             }
-            else
-                PreviousCard = stack[0].Peek();
+            else { position11.Image = null; }
 
 
         }
 
         public void Position22_Click(object sender, EventArgs e)
         {
-            var crd = new Card(SuitType.S, 6);
-            if (crd.IsCardTheSameValue(stack[4].Peek(), PreviousCard))
-            {
-                stack[4].Pop();
-                for (int i = 0; i < 9; i++)
+            if (stack[4].Count > 0) {
+                if (crd.IsCardTheSameValue(stack[4].Peek(), PreviousCard))
                 {
-                    if (crd.IsCardTheSameValue(PreviousCard, stack[i].Peek()))
+                    stack[4].Pop();
+                    for (int i = 0; i < 9; i++)
                     {
-                        stack[i].Pop();
-                        PreviousCard = null;
+                        if (stack[i].Count > 0)
+                        {
+                            if (crd.IsCardTheSameValue(PreviousCard, stack[i].Peek()))
+                            {
+                                stack[i].Pop();
+
+                            }
+                        }
+                        else { position22.Image = null; }
                     }
+                    PreviousCard.Suit = SuitType.S;
+                    PreviousCard.Value = 5;
+                    if (stack[4].Count > 0)
+                    {
+                        position22.Image = Image.FromFile(System.IO.Path.GetFullPath($@"CardImages\{stack[4].Peek().Suit}{stack[4].Peek().Value}.png"));
+                    }
+                    else
+                        position22.Image = null;
+                    PreviousCard = stack[4].Peek();
                 }
-            }
-            else
-                PreviousCard = stack[4].Peek();
+                else
+                {
+                    PreviousCard.Suit = SuitType.S;
+                    PreviousCard.Value = 5;
+                }
+                }
+            else { position11.Image = null; }
         }
+            
+
 
 
         private void ExitToolStripMenuItem_Click(object sender, EventArgs e)
