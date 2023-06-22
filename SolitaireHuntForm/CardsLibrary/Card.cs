@@ -35,6 +35,30 @@ namespace CardsLibrary
 
         }
 
+        public Stack<Card>[] GenerateStacks() 
+        {
+            Stack<Card>[] stack = new Stack<Card>[9];
+            for (int j = 0; j < 9; j++)
+            {
+                Stack<Card> stackAdditional = new Stack<Card>();
+                stack[j] = stackAdditional;
+                for (int i = 0; i < 4; i++)
+                {
+                    for (int k = 0; k < j + 1; k++)
+                    {
+                        var card = GenerateCard();
+                        if (stack[k].Contains(card))
+                            i--;
+                        else
+                            stackAdditional.Push(card);
+
+                    }
+                }
+                stack[j] = stackAdditional;
+            }
+            return stack;
+        }
+
 
 
         static Dictionary<int,SuitType> cardSuitType = new Dictionary<int, SuitType>
